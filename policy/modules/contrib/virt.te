@@ -701,6 +701,20 @@ optional_policy(`
 ')
 
 optional_policy(`
+	passt_socket(virt_domain, user_tmp_t)
+	passt_socket(virt_domain, qemu_var_run_t)
+
+	passt_pidfile(virtd_t, user_tmp_t)
+	passt_pidfile(virtd_t, virt_var_run_t)
+	passt_pidfile(virtd_t, qemu_var_run_t)
+
+	passt_logfile(user_tmp_t)
+
+	passt_domtrans(virtd_t)
+	passt_kill(virtd_t)
+')
+
+optional_policy(`
 	firewalld_dbus_chat(virtd_t)
 ')
 
